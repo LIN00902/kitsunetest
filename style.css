@@ -1,0 +1,320 @@
+  /* 1. 清除網頁原本的預設邊距 */
+  html {
+      height: 100%;
+  }
+
+  body {
+      margin: 0;
+      font-family: "LXGW Marker Gothic", sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+  }
+
+  .lxgw-marker-gothic-regular {
+      font-family: "LXGW Marker Gothic", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+  }
+
+  .header {
+      display: flex;
+      /* 啟用 Flexbox 魔法，讓裡面的 LOGO 和選單排成一橫排 */
+      align-items: flex-end;
+      /* 讓左邊和右邊的字在向下對齊 */
+      padding: 0px 40px;
+      /* 幫導覽列上下左右留一點舒適的留白（上下20px，左右40px） */
+      background-color: #fef1c4;
+      /* 幫導覽列加一個淡淡的背景色，方便你觀察 */
+  }
+
+  .logo img {
+      width: 80px;
+      height: auto;
+
+  }
+
+  .logo {
+      flex-shrink: 0;
+      /* 讓 LOGO 保持原本圖片的大小，不放大也不縮小 */
+      margin-right: 40px;
+      /* 讓 LOGO 保持原本圖片的大小，不放大也不縮小 */
+  }
+
+  .headerlink {
+      display: flex;
+      justify-content: space-evenly;
+      /*把所有子元素平均分配，每個間距都一樣，包括左右兩邊的空白。*/
+      list-style: none;
+      margin: 0;
+      padding: 0;
+  }
+
+  nav {
+      flex: 1;
+      /*把剩下的空間全部分配給這個元素*/
+  }
+
+  .headerlink li {
+      margin-left: 0px;
+  }
+
+  .headerlink a {
+      color: #ba7e10;
+      text-decoration: none;
+      font-weight: 500;
+      /* 讓字體稍微加粗一點點，比較好閱讀 */
+      background-color: aliceblue;
+      display: inline-block;
+      /* 讓 <a> 變成區塊，這樣才能設定寬高與內邊距 */
+      padding: 5px 20px;
+      /* 上下留 5px，左右留 10px，把白色格子撐起來 */
+      border-radius: 8px;
+      /* 讓格子的四個角變圓圓的（數值越大越圓） */
+      margin-bottom: 10px;
+  }
+
+  .backgroundup {
+      display: flex;
+      justify-items: center;
+      width: 100%;
+      overflow: hidden;
+      /* 確保超出螢幕的部分不會出現難看的捲軸 */
+  }
+
+  .backgroundup img {
+      width: 100%;
+      /* 讓圖片寬度永遠跟著螢幕大小走（100% 填滿） */
+      height: auto;
+      /* 保持等比例縮放，圖片絕不變形 */
+      display: block;
+  }
+
+  section {
+      max-width: 800px;
+      /* 🌟 留著它！鎖定文字最完美的閱讀寬度 */
+      margin: 60px auto;
+      /* 🌟 加上它！大螢幕時負責把 800px 的箱子「搬到中間」 */
+      margin-top: 10px;
+      margin-bottom: 10px;
+      flex-grow: 1;
+  }
+
+  .section2 {
+      padding-bottom: 20px;
+  }
+
+  .section2 p {
+      text-align: center;
+      margin: 0px;
+      font-size: 18px;
+  }
+
+  h3 {
+      text-align: center;
+      margin-top: 0px;
+  }
+
+  ul {
+      display: flex;
+  }
+
+  h1 {
+      /* 🌟 魔法：讓這個標題在畫面上完全消失，不佔任何空間 */
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0;
+  }
+
+  .product img {
+      width: 200px;
+      /* 設定固定的寬度 */
+      height: 200px;
+      /* 設定高度和寬度一樣，就會變成完美正方形 */
+
+      object-fit: cover;
+      /* 🌟 核心魔法：圖片會自動填滿 200x200 的四角形，多餘的會裁切，絕不變形！ */
+      border-radius: 12px;
+      /* （選配）如果你希望商品的四角形也跟導覽列一樣帶點圓角，可以加上這行 */
+  }
+
+  .product {
+      gap: 10px;
+      list-style: none;
+  }
+
+  h2 {
+      text-align: center;
+      margin-top: 0;
+      font-size: 20px;
+  }
+
+  .NEWS {
+      display: flex;
+      width: 90%;
+      /* 手機版時占螢幕 90% */
+      max-width: 1000px;
+      /* 🌟 大螢幕時，最大乖乖固定在 1000px */
+      margin: 60px auto;
+      /* 🌟 核心魔法：大畫面時自動把整個區塊搬到正中央 */
+      /*align-items: flex-start; ??? */
+
+  }
+
+  .NEWSLIST {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      /* 🌟填滿右邊剩下的所有空間 */
+      list-style: none;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+  }
+
+  .NEWSLIST li {
+      /* 🌟 修正這裡：加上 1px（粗細）和 solid（實線形狀） */
+      border-bottom: 1px dashed #ba7e10;
+      height: 30px;
+
+  }
+
+  .NEWSLEFT {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-right: 20px;
+  }
+
+  .NEWSLEFT h3,
+  .NEWSLEFT h4 {
+      margin: 0;
+  }
+
+  .news_item {
+      display: flex;
+      gap: 40px;
+
+  }
+
+  .NEWSLIST a {
+      color: black;
+      /* 文字顏色，可改成你想要的 */
+      text-decoration: none;
+      /* 去掉底線 */
+      padding-right: 10px;
+
+  }
+
+  .NEWSLIST a:hover {
+      color: #d89200;
+      /* 滑鼠移上去的顏色（可選） */
+  }
+
+  .news_date {
+      width: 180px;
+      /* 固定日期欄位寬度 */
+      margin-bottom: 0;
+      margin-top: 5px;
+  }
+
+  .news_title {
+      margin-bottom: 0;
+      margin-top: 5px;
+  }
+
+  .footer {
+      background-color: #ffde97;
+      display: flex;
+      align-items: center;
+  }
+
+  .footer img {
+      width: 80px;
+  }
+
+  .footer p {
+      flex-grow: 1;
+      align-items: center;
+      padding-left: 10px;
+
+  }
+
+  /* 文字順利排列在圖片「上方」（疊在圖片上層）的關鍵點有兩個：定位機制與圖層順序 */
+
+  .background_picture-font {
+      position: relative;
+      /* 外層容器：設定為定位基準 */
+      width: 100%;
+      /* 讓圖片寬度永遠跟著螢幕大小走（100% 填滿） */
+      height: auto;
+      /* 保持等比例縮放，圖片絕不變形 */
+  }
+
+  .background_picture-font img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      /* 🌟 魔法：自動裁切填滿，圖片絕對不變形、不留白 */
+      display: block;
+      margin: 0%;
+  }
+
+  .background_font {
+      position: absolute;
+      /* 文字圖層：絕對定位浮在圖片上 */
+      /* 調整文字在圖片上的位置（這裡預設為居中，你可以自己改） */
+      top: 10%;
+      left: 10%;
+  }
+
+  .newproduct_hanaishi {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .newproduct_hanaishi img {
+      width: 300px;
+      border-radius: 12px;
+  }
+
+  .newproduct_hanaishi p {
+      text-align: center;
+  }
+
+  .newproduct_top {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+  }
+
+  .popular_product {
+      display: flex;
+      gap: 10px;
+  }
+
+  .popular_product img {
+      width: 200px;
+      height: 200px;
+      border-radius: 12px;
+      object-fit: cover;
+  }
+
+  .tenjikaigazo01 {
+      width: 100%;
+      height: 500px;
+  }
+
+  .tenjikaigazo01 img {
+      width: 100%;
+      height: 450px;
+      object-fit: cover;
+      object-position: bottom;
+  }
